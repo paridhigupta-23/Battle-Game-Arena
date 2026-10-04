@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vanshika Agarwal | Portfolio</title>
+
+    <style>
+
+        /* ---------- GENERAL ---------- */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf4f7;
+            color: #172b35;
+            line-height: 1.6;
+        }
+
+
+        /* ---------- HEADER ---------- */
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 35px 10%;
+            background-color: rgb(135, 172, 199);
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 30px;
+            border: 4px solid white;
+        }
+
+        .header-text h1 {
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+
+        .header-text h3 {
+            font-size: 19px;
+            font-weight: normal;
+        }
+
+        .header-text hr {
+            width: 100%;
+            margin: 10px 0;
+            border: 0;
+            border-top: 2px solid #172b35;
+        }
+
+        .header-text p {
+            font-weight: bold;
+        }
+
+
+        /* ---------- NAVIGATION ---------- */
+
+        .navbar {
+            background-color: rgb(26, 84, 112);
+            padding: 18px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 0 14px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #b7edf2;
+            text-decoration: underline;
+        }
+
+
+        /* ---------- MAIN CONTAINER ---------- */
+
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+
+        /* ---------- CARDS ---------- */
+
+        .card {
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            background-color: rgb(174, 238, 244);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+        }
+
+        .card h2 {
+            font-size: 28px;
+            color: rgb(20, 71, 106);
+            margin-bottom: 18px;
+            border-bottom: 2px solid rgb(20, 71, 106);
+            padding-bottom: 8px;
+        }
+
+        .card p {
+            margin-bottom: 12px;
+        }
+
+
+        /* ---------- SKILLS ---------- */
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .skill-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid rgb(26, 84, 112);
+        }
+
+        .skill-box h3 {
+            color: rgb(20, 71, 106);
+            margin-bottom: 10px;
+        }
+
+        .skill-box ul {
+            padding-left: 20px;
+        }
+
+        .skill-box li {
+            margin-bottom: 5px;
+        }
+
+
+        /* ---------- PROJECTS ---------- */
+
+        .project {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            border-left: 5px solid rgb(26, 84, 112);
+        }
+
+        .project h3 {
+            color: rgb(20, 71, 106);
+            margin-bottom: 10px;
+        }
+
+        .project strong {
+            color: rgb(26, 84, 112);
+        }
+
+
+        /* ---------- EDUCATION ---------- */
+
+        .education-item {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .education-item h3 {
+            color: rgb(20, 71, 106);
+            margin-bottom: 8px;
+        }
+
+
+        /* ---------- CERTIFICATIONS ---------- */
+
+        .certifications ul {
+            padding-left: 25px;
+        }
+
+        .certifications li {
+            margin-bottom: 12px;
+        }
+
+
+        /* ---------- INTERESTS ---------- */
+
+        .goal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .goal-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .goal-box h3 {
+            color: rgb(20, 71, 106);
+            margin-bottom: 8px;
+        }
+
+
+        /* ---------- CONTACT ---------- */
+
+        .contact a {
+            color: rgb(20, 71, 106);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        .footer {
+            background-color: rgb(1, 29, 40);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer p {
+            margin: 5px;
+        }
+
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 768px) {
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .header-text h1 {
+                font-size: 30px;
+            }
+
+            .navbar a {
+                display: inline-block;
+                margin: 6px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .skill-grid,
+            .goal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        
+        <div class="header-text">
+
+            <h1>Vanshika Agarwal</h1>
+
+            <h3>
+                UG Student | B.Tech ECE with AIML
+            </h3>
+
+            <hr>
+
+            <p>
+                KL University | 2025 - 2029
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav class="navbar">
+
+        <a href="#about">About</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#education">Education</a>
+
+        <a href="#certifications">Certifications</a>
+
+        <a href="#interests">Interests</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="container">
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about">
+
+            <div class="card about">
+
+                <h2>About Me</h2>
+
+                <p>
+                    Hello! I am <strong>Vanshika Agarwal</strong>,
+                    a first-year B.Tech student specializing in
+                    <strong>Electronics and Communication Engineering
+                    with Artificial Intelligence and Machine Learning</strong>
+                    at KL University.
+                </p>
+
+                <p>
+                    I am interested in
+                    <strong>Frontend Development, Full Stack Development,
+                    Artificial Intelligence, Machine Learning,
+                    Embedded Systems and Electronics.</strong>
+                </p>
+
+                <p>
+                    I enjoy learning new technologies and building
+                    practical projects that combine software and
+                    hardware to solve real-world problems.
+                </p>
+
+                <p>
+                    Currently, I am developing my programming,
+                    web development, problem-solving and technical
+                    skills while working on different academic
+                    and personal projects.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SKILLS ================= -->
+
+        <section id="skills">
+
+            <div class="card skills">
+
+                <h2>Skills</h2>
+
+
+                <div class="skill-grid">
+
+
+                    <div class="skill-box">
+
+                        <h3>Programming Languages</h3>
+
+                        <ul>
+                            <li>C</li>
+                            <li>C++</li>
+                            <li>Java</li>
+                            <li>Python</li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="skill-box">
+
+                        <h3>Web Development</h3>
+
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>React.js</li>
+                            <li>Vite</li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="skill-box">
+
+                        <h3>AI & Computer Science</h3>
+
+                        <ul>
+                            <li>Artificial Intelligence</li>
+                            <li>Machine Learning Basics</li>
+                            <li>Data Structures</li>
+                            <li>Algorithms</li>
+                            <li>Problem Solving</li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="skill-box">
+
+                        <h3>Electronics & Tools</h3>
+
+                        <ul>
+                            <li>Embedded Systems</li>
+                            <li>Basic Electronics</li>
+                            <li>Sensors</li>
+                            <li>Git & GitHub</li>
+                            <li>VS Code</li>
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROJECTS ================= -->
+
+        <section id="projects">
+
+            <div class="card projects">
+
+                <h2>Projects</h2>
+
+
+                <!-- Project 1 -->
+
+                <div class="project">
+
+                    <h3>
+                        01. Algorithm Arena
+                    </h3>
+
+                    <p>
+                        An interactive web platform designed to
+                        visualize and compare different algorithms
+                        based on their performance and time complexity.
+                    </p>
+
+                    <p>
+                        <strong>Technologies:</strong>
+                        React.js, JavaScript, CSS and Recharts
+                    </p>
+
+                    <p>
+                        <strong>Algorithms:</strong>
+                        Bubble Sort, Merge Sort, Quick Sort,
+                        Linear Search, Binary Search, BFS, DFS,
+                        Greedy Best First Search and A*.
+                    </p>
+
+                </div>
+
+
+                <!-- Project 2 -->
+
+                <div class="project">
+
+                    <h3>
+                        02. TravelHub
+                    </h3>
+
+                    <p>
+                        A React-based travel website where users can
+                        explore destinations, search for places,
+                        manage bookings and interact with a travel cart.
+                    </p>
+
+                    <p>
+                        <strong>Technologies:</strong>
+                        React.js, Vite, JavaScript, HTML and CSS
+                    </p>
+
+                </div>
+
+
+                <!-- Project 3 -->
+
+                <div class="project">
+
+                    <h3>
+                        03. Airline Booking System
+                    </h3>
+
+                    <p>
+                        A Java-based airline booking system designed
+                        to manage flight bookings, routes and
+                        passenger services using data structures
+                        and graph algorithms.
+                    </p>
+
+                    <p>
+                        <strong>Concepts:</strong>
+                        BST, AVL Tree, B-Tree, Dijkstra,
+                        Floyd-Warshall, Sorting, Queues,
+                        Stacks and File Handling.
+                    </p>
+
+                </div>
+
+
+                <!-- Project 4 -->
+
+                <div class="project">
+
+                    <h3>
+                        04. Campus Food Ordering & Queue Management
+                    </h3>
+
+                    <p>
+                        A smart campus food ordering system designed
+                        to reduce long queues during peak hours.
+                        Students can browse menus, place orders in
+                        advance and track their order status.
+                    </p>
+
+                    <p>
+                        <strong>Features:</strong>
+                        Online Ordering, Live Order Status,
+                        Queue Management, Canteen Dashboard,
+                        Notifications and Analytics.
+                    </p>
+
+                </div>
+
+
+                <!-- Project 5 -->
+
+                <div class="project">
+
+                    <h3>
+                        05. Smart Campus Evacuation Guidance System
+                    </h3>
+
+                    <p>
+                        A smart emergency-management system designed
+                        to provide intelligent zone-based communication
+                        and guide students and staff toward safer
+                        evacuation routes during emergencies.
+                    </p>
+
+                    <p>
+                        <strong>Focus:</strong>
+                        Sensors, Embedded Systems,
+                        Emergency Communication and
+                        Intelligent Navigation.
+                    </p>
+
+                </div>
+
+
+                <!-- Project 6 -->
+
+                <div class="project">
+
+                    <h3>
+                        06. EEG-Based Smart Wheelchair
+                    </h3>
+
+                    <p>
+                        An assistive technology project concept
+                        exploring EEG signals and embedded AI
+                        for smart wheelchair control.
+                    </p>
+
+                    <p>
+                        <strong>Focus:</strong>
+                        EEG Sensors, Artificial Intelligence,
+                        Embedded Systems and Assistive Technology.
+                    </p>
+
+                </div>
+
+
+                <!-- Project 7 -->
+
+                <div class="project">
+
+                    <h3>
+                        07. Numerical Verification of Parseval's Theorem
+                    </h3>
+
+                    <p>
+                        A mathematical and computational project
+                        that verifies Parseval's theorem by comparing
+                        signal energy in the time domain and
+                        frequency domain.
+                    </p>
+
+                    <p>
+                        <strong>Technologies:</strong>
+                        Python, NumPy, FFT and Matplotlib
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EDUCATION ================= -->
+
+        <section id="education">
+
+            <div class="card education">
+
+                <h2>Education</h2>
+
+
+                <div class="education-item">
+
+                    <h3>
+                        B.Tech - Electronics & Communication Engineering
+                    </h3>
+
+                    <p>
+                        <strong>KL University, Hyderabad</strong>
+                    </p>
+
+                    <p>
+                        Specialization:
+                        Artificial Intelligence &
+                        Machine Learning
+                    </p>
+
+                    <p>
+                        <strong>2025 - 2029</strong>
+                    </p>
+
+                </div>
+
+
+                <div class="education-item">
+
+                    <h3>
+                        Higher Secondary Education
+                    </h3>
+
+                    <p>
+                        Completed Higher Secondary Education.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CERTIFICATIONS ================= -->
+
+        <section id="certifications">
+
+            <div class="card certifications">
+
+                <h2>Certifications</h2>
+
+                <ul>
+
+                    <li>
+                        <strong>HTML & CSS</strong>
+                        - FreeCodeCamp
+                    </li>
+
+                    <li>
+                        <strong>Python Basics</strong>
+                        - Online Certification
+                    </li>
+
+                    <li>
+                        <strong>Cambridge Linguaskill</strong>
+                        - English Language Certification
+                    </li>
+
+                    <li>
+                        <strong>Artificial Intelligence &
+                        Machine Learning</strong>
+                        - Academic Learning
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INTERESTS ================= -->
+
+        <section id="interests">
+
+            <div class="card interests">
+
+                <h2>Interests & Goals</h2>
+
+
+                <div class="goal-grid">
+
+
+                    <div class="goal-box">
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+                        <p>
+                            Interested in creating modern,
+                            responsive and user-friendly
+                            websites and web applications.
+                        </p>
+
+                    </div>
+
+
+                    <div class="goal-box">
+
+                        <h3>
+                            Artificial Intelligence
+                        </h3>
+
+                        <p>
+                            Exploring AI, machine learning
+                            and intelligent systems.
+                        </p>
+
+                    </div>
+
+
+                    <div class="goal-box">
+
+                        <h3>
+                            Electronics
+                        </h3>
+
+                        <p>
+                            Interested in embedded systems,
+                            sensors, circuits and
+                            hardware-based solutions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="goal-box">
+
+                        <h3>
+                            Problem Solving
+                        </h3>
+
+                        <p>
+                            Improving programming,
+                            algorithms, logical thinking
+                            and problem-solving abilities.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact">
+
+            <div class="card contact">
+
+                <h2>Contact Me</h2>
+
+                <p>
+                    <strong>Email:</strong>
+                    vanshika@909.com
+                </p>
+
+                <p>
+                    <strong>LinkedIn:</strong>
+                    <a href="#" target="_blank">
+                        LinkedIn Profile
+                    </a>
+                </p>
+
+                <p>
+                    <strong>GitHub:</strong>
+                    <a href="#" target="_blank">
+                        GitHub Profile
+                    </a>
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Vanshika Agarwal
+        </p>
+
+        <p>
+            B.Tech ECE with AIML | KL University
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
