@@ -1,0 +1,274 @@
+.page {
+  padding: 22px;
+  color: #e2e8f0;
+  background: radial-gradient(
+    circle at top,
+    rgba(30, 41, 59, 0.35),
+    transparent 60%
+  ),
+  #0f172a;
+
+  min-height: 100vh;
+}
+
+.arena-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* =========================
+   RESULT PANEL (now analytics style)
+========================= */
+
+.result-box {
+  background: linear-gradient(
+    145deg,
+    rgba(30, 41, 59, 0.92),
+    rgba(15, 23, 42, 0.92)
+  );
+
+  padding: 18px;
+  border-radius: 14px;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.battle-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stats-card {
+  background: rgba(51, 65, 85, 0.6);
+
+  padding: 10px;
+  border-radius: 8px;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+/* LOSER BOX → error/info state panel */
+.loser-box {
+  margin-top: 10px;
+  padding: 12px;
+
+  background: rgba(239, 68, 68, 0.08);
+
+  border: 1px solid rgba(239, 68, 68, 0.2);
+
+  border-radius: 10px;
+}
+
+/* =========================
+   VISUALIZATION AREA
+========================= */
+
+.viz-box {
+  margin-top: 10px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(30, 41, 59, 0.92),
+    rgba(15, 23, 42, 0.92)
+  );
+
+  padding: 16px;
+  border-radius: 14px;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+}
+
+/* HEADER */
+.viz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.viz-header h2 {
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  color: #e2e8f0;
+}
+
+/* =========================
+   BUTTON SYSTEM (tool-like UI)
+========================= */
+
+.viz-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* unified button system */
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.button-group button,
+.viz-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 11px 18px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(148, 163, 184, 0.15);
+
+  background: rgba(55, 65, 81, 0.85);
+  color: #e2e8f0;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  min-width: 170px;
+
+  transition: all 0.2s ease;
+
+  font-family: inherit;
+}
+
+.button-group button:hover,
+.viz-btn:hover {
+  background: rgba(75, 85, 99, 0.95);
+  transform: translateY(-2px);
+}
+
+/* secondary button */
+.viz-btn.secondary {
+  background: rgba(100, 116, 139, 0.5);
+}
+
+.viz-btn.secondary:hover {
+  background: rgba(100, 116, 139, 0.7);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* CARD */
+.viz-card {
+  background: rgba(30, 41, 59, 0.9);
+
+  padding: 12px;
+  border-radius: 10px;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.viz-card h3 {
+  margin-bottom: 8px;
+  color: #e2e8f0;
+}
+
+/* =========================
+   TRACK / STEPS (execution log style)
+========================= */
+
+.viz-track {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  max-height: 250px;
+  overflow-y: auto;
+
+  margin-top: 10px;
+  padding-right: 5px;
+}
+
+/* scrollbar */
+.viz-track::-webkit-scrollbar {
+  width: 5px;
+}
+
+.viz-track::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 10px;
+}
+
+/* STEP = log entry */
+.viz-step {
+  padding: 8px;
+
+  background: rgba(51, 65, 85, 0.55);
+
+  border-radius: 6px;
+
+  border: 1px solid rgba(148, 163, 184, 0.1);
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 13px;
+
+  transition: 0.2s ease;
+}
+
+/* ACTIVE STEP → execution highlight (not game glow) */
+.viz-step.active {
+  background: rgba(148, 163, 184, 0.12);
+
+  border-color: rgba(148, 163, 184, 0.35);
+
+  transform: translateX(4px);
+
+  font-weight: 600;
+}
+
+/* DONE STEP → faded log history */
+.viz-step.done {
+  opacity: 0.4;
+}
+
+/* pointer becomes cursor-like indicator */
+.pointer {
+  display: inline-block;
+  transition: 0.2s ease;
+  opacity: 0.8;
+}
+
+/* =========================
+   ALGORITHM COLORS (subtle identifiers)
+========================= */
+
+.linear {
+  border-left: 3px solid rgba(56, 189, 248, 0.7);
+}
+
+.binary {
+  border-left: 3px solid rgba(168, 85, 247, 0.7);
+}
+
+/* =========================
+   LAYOUT HELPERS
+========================= */
+
+.step-section {
+  margin-top: 20px;
+}
+
+/* GLOBAL SAFETY FIX */
+button {
+  font-family: inherit;
+  box-sizing: border-box;
+}
